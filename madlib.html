@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Madlibs!</title>
+
+  <!-- load script files here! -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="container" ng-app="MadlibApp" ng-controller="MadlibCtrl">
+
+<h1><img src="img/madlibslogo.png"></h1>
+
+<div>
+  <p class="lead">Enter words to create a story!</p>
+  <form>
+    <label for="adjective">An adjective:</label>
+    <input name="adjective" id="adjective" ng-model="adjective">
+    <br/>
+    <label for="firstNoun">A noun:</label>
+    <input name="firstNoun" id="firstNoun" ng-model="firstNoun">
+    <br/>
+    <label for="name">A name:</label>
+    <input name="name" id="name" ng-model="name">
+    <br/>
+    <label for="pronoun">A pronoun:</label>
+    <input name="pronoun" id="pronoun" ng-model="pronoun">
+    <br/>
+    <label for="place">A place:</label>
+    <input name="place" id="place" ng-model="place">
+    <br/>
+    <label for="verb">A verb (past tense):</label>
+    <input name="verb" id="verb" ng-model="verb">
+    <br/>
+    <label for="secondNoun">Another noun:</label>
+    <input name="secondNoun" id="secondNoun" ng-model="secondNoun">
+    <br/>
+    <button type="button" class="btn btn-default">Show story</button>
+  </form>
+
+  <div id="currentStory" class="story">
+    <p> Once upon a time, there was a {{adjective}} {{firstNoun}} named {{name}}</p>
+  </div>
+
+  <!-- load your script file! -->
+  <script src="js/madlib.js"></script>
+</div>
+
+</body>
+</html>

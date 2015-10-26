@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>SoundCloud Example</title>
+  
+  <link rel="stylesheet" href="css/main.css"/>
+
+  <!-- include libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+</head>
+<body ng-app="SoundCloudApp">
+  <div class="container" ng-controller="MusicCtrl">
+
+    <form name="trackForm">
+      <div class="form-group">
+        <label>SoundCloud search:</label>
+        <input name="search" placeholder="Search for a track..." class="form-control" ng-model="query"></input>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit" ng-click="getTracks()">Submit</button>
+      </div>
+    </form>     
+
+    <div ng-if = "tracks.length >0"
+    <p>Tracks found:</p>
+    <ul>
+      <li ng-repeat = "track in tracks">
+        {{track.title}}
+      </li>
+    </ul>
+    </div>
+
+  </div> <!-- end container -->
+
+  <!-- load your script file! -->
+  <script src="js/soundcloud.js"></script>
+</body>
+</html>
